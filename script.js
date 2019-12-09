@@ -16,7 +16,6 @@ var errorMessage = "Image not loaded.";
 /**
 * Uploads image chosen via file input.
 */
-
 function uploadImage() {
 	fileInput = document.getElementById("fileInput");
 	imageOriginal = new SimpleImage(fileInput);
@@ -50,10 +49,10 @@ function isLoaded() {
  */
 function filterGray() {
 	for(var pixel of imageOutput.values()) {
-	    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
-	    pixel.setRed(rgbAverage);
-	    pixel.setGreen(rgbAverage);
-	    pixel.setBlue(rgbAverage);
+    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
+    pixel.setRed(rgbAverage);
+    pixel.setGreen(rgbAverage);
+    pixel.setBlue(rgbAverage);
 	}
 }
 
@@ -130,80 +129,80 @@ function filterHorizontalRainbow() {
 	const SIX_SEVENTHS = (6/7) * HEIGHT;
   
 	for (var pixel of imageOutput.values()) {
-      var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
-	    var yCoordinate = pixel.getY();
-	  
-	    if (yCoordinate < ONE_SEVENTH) {
-        if (rgbAverage < 128) { // red
-          pixel.setRed(rgbAverage * 2);
-          pixel.setGreen(0);
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed(255);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (yCoordinate >= ONE_SEVENTH && yCoordinate < TWO_SEVENTHS) {
-	    	if (rgbAverage < 128) { // orange
-          pixel.setRed(rgbAverage * 2);
-          pixel.setGreen(Math.round(rgbAverage * 0.8));
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed(255);
-          pixel.setGreen((Math.round(rgbAverage * 1.2)) - 51);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (yCoordinate >= TWO_SEVENTHS && yCoordinate < THREE_SEVENTHS) {
-	    	if (rgbAverage < 128) { // yellow
-          pixel.setRed(rgbAverage * 2);
-          pixel.setGreen(rgbAverage * 2);
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed(255);
-          pixel.setGreen(255);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (yCoordinate >= THREE_SEVENTHS && yCoordinate < FOUR_SEVENTHS) {
-	        if (rgbAverage < 128) { // green
-          pixel.setRed(0);
-          pixel.setGreen(rgbAverage * 2);
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed((rgbAverage * 2) - 255);
-          pixel.setGreen(255);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (yCoordinate >= FOUR_SEVENTHS && yCoordinate < FIVE_SEVENTHS) {
-	        if (rgbAverage < 128) { // blue
-          pixel.setRed(0);
-          pixel.setGreen(0);
-          pixel.setBlue(rgbAverage * 2);
-        } else {
-          pixel.setRed((rgbAverage * 2) - 255);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue(255);
-        }
-	    } else if (yCoordinate >= FIVE_SEVENTHS && yCoordinate < SIX_SEVENTHS) {
-	    	if (rgbAverage < 128) { // indigo
-          pixel.setRed(Math.round(rgbAverage * 0.8));
-          pixel.setGreen(0);
-          pixel.setBlue(rgbAverage * 2);
-        } else {
-          pixel.setRed((Math.round(rgbAverage * 1.2)) - 51);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue(255);
-        }
-	    } else {
-	    	if (rgbAverage < 128) { // violet
-          pixel.setRed(Math.round(rgbAverage * 1.6));
-          pixel.setGreen(0);
-          pixel.setBlue(Math.round(rgbAverage * 1.6));
-        } else {
-          pixel.setRed((Math.round(rgbAverage * 0.4)) + 153);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue((Math.round(rgbAverage * 0.4)) + 153);
-        }
-	    }
+    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
+    var yCoordinate = pixel.getY();
+  
+    if (yCoordinate < ONE_SEVENTH) {
+      if (rgbAverage < 128) { // red
+        pixel.setRed(rgbAverage * 2);
+        pixel.setGreen(0);
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed(255);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (yCoordinate >= ONE_SEVENTH && yCoordinate < TWO_SEVENTHS) {
+      if (rgbAverage < 128) { // orange
+        pixel.setRed(rgbAverage * 2);
+        pixel.setGreen(Math.round(rgbAverage * 0.8));
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed(255);
+        pixel.setGreen((Math.round(rgbAverage * 1.2)) - 51);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (yCoordinate >= TWO_SEVENTHS && yCoordinate < THREE_SEVENTHS) {
+      if (rgbAverage < 128) { // yellow
+        pixel.setRed(rgbAverage * 2);
+        pixel.setGreen(rgbAverage * 2);
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (yCoordinate >= THREE_SEVENTHS && yCoordinate < FOUR_SEVENTHS) {
+      if (rgbAverage < 128) { // green
+        pixel.setRed(0);
+        pixel.setGreen(rgbAverage * 2);
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed((rgbAverage * 2) - 255);
+        pixel.setGreen(255);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (yCoordinate >= FOUR_SEVENTHS && yCoordinate < FIVE_SEVENTHS) {
+      if (rgbAverage < 128) { // blue
+        pixel.setRed(0);
+        pixel.setGreen(0);
+        pixel.setBlue(rgbAverage * 2);
+      } else {
+        pixel.setRed((rgbAverage * 2) - 255);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue(255);
+      }
+    } else if (yCoordinate >= FIVE_SEVENTHS && yCoordinate < SIX_SEVENTHS) {
+      if (rgbAverage < 128) { // indigo
+        pixel.setRed(Math.round(rgbAverage * 0.8));
+        pixel.setGreen(0);
+        pixel.setBlue(rgbAverage * 2);
+      } else {
+        pixel.setRed((Math.round(rgbAverage * 1.2)) - 51);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue(255);
+      }
+    } else {
+      if (rgbAverage < 128) { // violet
+        pixel.setRed(Math.round(rgbAverage * 1.6));
+        pixel.setGreen(0);
+        pixel.setBlue(Math.round(rgbAverage * 1.6));
+      } else {
+        pixel.setRed((Math.round(rgbAverage * 0.4)) + 153);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue((Math.round(rgbAverage * 0.4)) + 153);
+      }
+    }
 	}
 }
 
@@ -234,80 +233,80 @@ function filterVerticalRainbow() {
 	const SIX_SEVENTHS = (6/7) * WIDTH;
 
 	for (var pixel of imageOutput.values()) {
-	    var xCoordinate = pixel.getX();
-      var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
-	  
-	    if (xCoordinate < ONE_SEVENTH) {
-	        if (rgbAverage < 128) { // red
-          pixel.setRed(rgbAverage * 2);
-          pixel.setGreen(0);
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed(255);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (xCoordinate >= ONE_SEVENTH && xCoordinate < TWO_SEVENTHS) {
-	    	if (rgbAverage < 128) { // orange
-          pixel.setRed(rgbAverage * 2);
-          pixel.setGreen(Math.round(rgbAverage * 0.8));
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed(255);
-          pixel.setGreen((Math.round(rgbAverage * 1.2)) - 51);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (xCoordinate >= TWO_SEVENTHS && xCoordinate < THREE_SEVENTHS) {
-	    	if (rgbAverage < 128) { // yellow
-          pixel.setRed(rgbAverage * 2);
-          pixel.setGreen(rgbAverage * 2);
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed(255);
-          pixel.setGreen(255);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (xCoordinate >= THREE_SEVENTHS && xCoordinate < FOUR_SEVENTHS) {
-	        if (rgbAverage < 128) { // green
-          pixel.setRed(0);
-          pixel.setGreen(rgbAverage * 2);
-          pixel.setBlue(0);
-        } else {
-          pixel.setRed((rgbAverage * 2) - 255);
-          pixel.setGreen(255);
-          pixel.setBlue((rgbAverage * 2) - 255);
-        }
-	    } else if (xCoordinate >= FOUR_SEVENTHS && xCoordinate < FIVE_SEVENTHS) {
-	        if (rgbAverage < 128) { // blue
-          pixel.setRed(0);
-          pixel.setGreen(0);
-          pixel.setBlue(rgbAverage * 2);
-        } else {
-          pixel.setRed((rgbAverage * 2) - 255);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue(255);
-        }
-	    } else if (xCoordinate >= FIVE_SEVENTHS && xCoordinate < SIX_SEVENTHS) {
-	    	if (rgbAverage < 128) { // indigo
-          pixel.setRed(Math.round(rgbAverage * 0.8));
-          pixel.setGreen(0);
-          pixel.setBlue(rgbAverage * 2);
-        } else {
-          pixel.setRed((Math.round(rgbAverage * 1.2)) - 51);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue(255);
-        }
-	    } else {
-	    	if (rgbAverage < 128) { // violet
-          pixel.setRed(Math.round(rgbAverage * 1.6));
-          pixel.setGreen(0);
-          pixel.setBlue(Math.round(rgbAverage * 1.6));
-        } else {
-          pixel.setRed((Math.round(rgbAverage * 0.4)) + 153);
-          pixel.setGreen((rgbAverage * 2) - 255);
-          pixel.setBlue((Math.round(rgbAverage * 0.4)) + 153);
-        }
-	    }
+    var xCoordinate = pixel.getX();
+    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
+  
+    if (xCoordinate < ONE_SEVENTH) {
+      if (rgbAverage < 128) { // red
+        pixel.setRed(rgbAverage * 2);
+        pixel.setGreen(0);
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed(255);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (xCoordinate >= ONE_SEVENTH && xCoordinate < TWO_SEVENTHS) {
+      if (rgbAverage < 128) { // orange
+        pixel.setRed(rgbAverage * 2);
+        pixel.setGreen(Math.round(rgbAverage * 0.8));
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed(255);
+        pixel.setGreen((Math.round(rgbAverage * 1.2)) - 51);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (xCoordinate >= TWO_SEVENTHS && xCoordinate < THREE_SEVENTHS) {
+      if (rgbAverage < 128) { // yellow
+        pixel.setRed(rgbAverage * 2);
+        pixel.setGreen(rgbAverage * 2);
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed(255);
+        pixel.setGreen(255);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (xCoordinate >= THREE_SEVENTHS && xCoordinate < FOUR_SEVENTHS) {
+      if (rgbAverage < 128) { // green
+        pixel.setRed(0);
+        pixel.setGreen(rgbAverage * 2);
+        pixel.setBlue(0);
+      } else {
+        pixel.setRed((rgbAverage * 2) - 255);
+        pixel.setGreen(255);
+        pixel.setBlue((rgbAverage * 2) - 255);
+      }
+    } else if (xCoordinate >= FOUR_SEVENTHS && xCoordinate < FIVE_SEVENTHS) {
+      if (rgbAverage < 128) { // blue
+        pixel.setRed(0);
+        pixel.setGreen(0);
+        pixel.setBlue(rgbAverage * 2);
+      } else {
+        pixel.setRed((rgbAverage * 2) - 255);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue(255);
+      }
+    } else if (xCoordinate >= FIVE_SEVENTHS && xCoordinate < SIX_SEVENTHS) {
+      if (rgbAverage < 128) { // indigo
+        pixel.setRed(Math.round(rgbAverage * 0.8));
+        pixel.setGreen(0);
+        pixel.setBlue(rgbAverage * 2);
+      } else {
+        pixel.setRed((Math.round(rgbAverage * 1.2)) - 51);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue(255);
+      }
+    } else {
+      if (rgbAverage < 128) { // violet
+        pixel.setRed(Math.round(rgbAverage * 1.6));
+        pixel.setGreen(0);
+        pixel.setBlue(Math.round(rgbAverage * 1.6));
+      } else {
+        pixel.setRed((Math.round(rgbAverage * 0.4)) + 153);
+        pixel.setGreen((rgbAverage * 2) - 255);
+        pixel.setBlue((Math.round(rgbAverage * 0.4)) + 153);
+      }
+    }
 	}
 }
 
@@ -330,18 +329,18 @@ function doVerticalRainbow() {
  */
 function filterRed() {
 	for(var pixel of imageOutput.values()) {
-	    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
-    
-      if (rgbAverage < 128) {
-        pixel.setRed(rgbAverage * 2);
-        pixel.setGreen(0);
-        pixel.setBlue(0);
-      } else {
-        pixel.setRed(255);
-        pixel.setGreen((rgbAverage * 2) - 255);
-        pixel.setBlue((rgbAverage * 2) - 255) 
-      }
-	  }
+    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
+  
+    if (rgbAverage < 128) {
+      pixel.setRed(rgbAverage * 2);
+      pixel.setGreen(0);
+      pixel.setBlue(0);
+    } else {
+      pixel.setRed(255);
+      pixel.setGreen((rgbAverage * 2) - 255);
+      pixel.setBlue((rgbAverage * 2) - 255) 
+    }
+  }
 }
 
 /**
@@ -363,21 +362,21 @@ function doRed() {
  */
 function filterTeal() {
 	for(var pixel of imageOutput.values()) {
-	    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
-      var red = 17; // teal rgb values
-      var green = 170;
-      var blue = 153;
-    
-      if (rgbAverage < 128) {
-        pixel.setRed(rgbAverage * (Math.round(red / 127.5)));
-        pixel.setGreen(rgbAverage * (Math.round(green / 127.5)));
-        pixel.setBlue(rgbAverage * (Math.round(blue / 127.5)));
-      } else {
-        pixel.setRed((rgbAverage * (2 - (Math.round(red/127.5)))) * ((2 * red) - 255));
-        pixel.setGreen((rgbAverage * (2 - (Math.round(green/127.5)))) * ((2 * green) - 255));
-        pixel.setBlue((rgbAverage * (2 - (Math.round(blue/127.5)))) * ((2 * blue) - 255)) 
-      }
-	  }
+    var rgbAverage = Math.round((pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3);
+    var red = 17; // teal rgb values
+    var green = 170;
+    var blue = 153;
+  
+    if (rgbAverage < 128) {
+      pixel.setRed(rgbAverage * (Math.round(red / 127.5)));
+      pixel.setGreen(rgbAverage * (Math.round(green / 127.5)));
+      pixel.setBlue(rgbAverage * (Math.round(blue / 127.5)));
+    } else {
+      pixel.setRed((rgbAverage * (2 - (Math.round(red/127.5)))) * ((2 * red) - 255));
+      pixel.setGreen((rgbAverage * (2 - (Math.round(green/127.5)))) * ((2 * green) - 255));
+      pixel.setBlue((rgbAverage * (2 - (Math.round(blue/127.5)))) * ((2 * blue) - 255)) 
+    }
+  }
 }
 
 /**
@@ -406,11 +405,11 @@ function swapPixels(x, y) {
     var safeXY = imageOutput.getPixel(WIDTH - 1, 0);
     imageOutput.setPixel(x, y, safeXY);
   } else if ((x + randomPixel) > (WIDTH - 1)) { // if random pixel is greater than width
-      var safeX = imageOutput.getPixel(WIDTH - 1, y - randomPixel);
-      imageOutput.setPixel(x, y, safeX);
+    var safeX = imageOutput.getPixel(WIDTH - 1, y - randomPixel);
+    imageOutput.setPixel(x, y, safeX);
   } else if ((y - randomPixel) < 0) { // if random pixel is less than height
-      var safeY = imageOutput.getPixel(x + randomPixel, 0);
-      imageOutput.setPixel(x, y, safeY);
+    var safeY = imageOutput.getPixel(x + randomPixel, 0);
+    imageOutput.setPixel(x, y, safeY);
   } else { // random pizel is within width and height
     var newPixel = imageOutput.getPixel(x + randomPixel, y - randomPixel);
     imageOutput.setPixel(x, y, newPixel);
@@ -490,12 +489,10 @@ function doWindowView() {
         filterWindow(pixel);
       }
       // inner lines
-      if (xCoordinate > ((WIDTH / 2) - (lineThickness / 2)) &&
-              xCoordinate < ((WIDTH / 2) + (lineThickness / 2))) {
+      if (xCoordinate > ((WIDTH / 2) - (lineThickness / 2)) && xCoordinate < ((WIDTH / 2) + (lineThickness / 2))) {
         filterWindow(pixel);
       }
-      if (yCoordinate > ((HEIGHT / 2) - (lineThickness / 2)) &&
-              yCoordinate < ((HEIGHT / 2) + (lineThickness / 2))) {
+      if (yCoordinate > ((HEIGHT / 2) - (lineThickness / 2)) && yCoordinate < ((HEIGHT / 2) + (lineThickness / 2))) {
         filterWindow(pixel);
       }
     }

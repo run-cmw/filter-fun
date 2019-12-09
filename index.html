@@ -2,40 +2,37 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Image Filter MiniProject Final - Coursera Programming Foundations Week 4</title>
+  <title> Filter Fun, an Image Filter Site </title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+  <h1> Filter Fun </h1>
+  <p> Upload an image and add filters using the buttons below. </p>
+  <p> Reset the image before applying the same filter twice. Note that filters will take longer to apply to large image files. </p>
 
-<h1> Filter Fun </h1>
-<p> Upload an image and add filters using the buttons below. </p>
-<p> Reset the image before applying the same filter twice. Note that filters will take longer to apply to large image files. </p>
+  <canvas id="canvas"></canvas>
+      
+  <br>
+  <label> Load image </label>
+  <input id="fileInput" type="file" accept="image/*" multiple="false" onchange="uploadImage()">
+      
+  <br>
+  <label> Choose filter </label>
+  <input id="grayscaleButton" type="button" value="Grayscale" onclick="doGrayscale()">
+  <input id="sepiaToneButton" type="button" value="Sepia Tone" onclick="doSepiaTone()">
+  <input id="redButton" type="button" value="Red" onclick="doRed()">
+  <input id="tealButton" type="button" value="Teal Graphic" onclick="doTeal()">
+  <input id="horizontalRainbowButton" type="button" value="Horizontal Rainbow" onclick="doHorizontalRainbow()">
+  <input id="verticalRainbowButton" type="button" value="Vertical Rainbow" onclick="doVerticalRainbow()">
+  <input id="blurButton" type="button" value="Blur" onclick="doBlur()">
+  <input id="windowViewButton" type="button" value="Window View" onclick="doWindowView()">
 
-<canvas id="canvas"></canvas>
-		
-<br>
-<label> Load image </label>
-<input id="fileInput" type="file" accept="image/*" multiple="false" onchange="uploadImage()">
-		
-<br>
-<label> Choose filter </label>
-<input id="grayscaleButton" type="button" value="Grayscale" onclick="doGrayscale()">
-<input id="sepiaToneButton" type="button" value="Sepia Tone" onclick="doSepiaTone()">
-<input id="redButton" type="button" value="Red" onclick="doRed()">
-<input id="tealButton" type="button" value="Teal Graphic" onclick="doTeal()">
-<input id="horizontalRainbowButton" type="button" value="Horizontal Rainbow" onclick="doHorizontalRainbow()">
-<input id="verticalRainbowButton" type="button" value="Vertical Rainbow" onclick="doVerticalRainbow()">
-<input id="blurButton" type="button" value="Blur" onclick="doBlur()">
-<input id="windowViewButton" type="button" value="Window View" onclick="doWindowView()">
+  <br>
+  <label> Reset image to original form </label>
+  <input id="reset" type="button" value="Reset Image" onclick="resetImage()">
 
-<br>
-<label> Reset image to original form </label>
-<input id="reset" type="button" value="Reset Image" onclick="resetImage()">
-<!-- partial -->
+  <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
   <script  src="./script.js"></script>
-
 </body>
 </html>
