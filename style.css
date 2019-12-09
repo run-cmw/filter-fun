@@ -1,0 +1,26 @@
+body {
+	background-color: #fce9e9;
+	letter-spacing: .2em;
+	margin: 5%;
+	margin-top: 3%;
+	color: SaddleBrown;
+}
+
+h1 {
+	color: DarkSeaGreen;
+}
+
+canvas {
+	width: 400px;
+	height: 300px;
+	border: 1px solid DarkSeaGreen;
+}
+
+input {
+	margin-top: 10px;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: DarkSeaGreen;
+	color: SaddleBrown;
+	font-weight: bold;
+}
